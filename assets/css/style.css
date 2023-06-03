@@ -54,3 +54,35 @@ html {
     transform: rotate(360deg);
     transition: transform 0.5s ease;
 }
+
+.new-link {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    margin-top: 10px;
+}
+  
+.new-link:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode {
+    background-color: #222;
+}
+
+body.light-mode {
+    background-color: white;
+}
+  
+body.dark-mode .new-link {
+    color: #fff;
+}
+
+body.dark-mode h1 {
+    color: #fff;
+}
+
+#toggle-dark-mode {
+    background: transparent;
+}
