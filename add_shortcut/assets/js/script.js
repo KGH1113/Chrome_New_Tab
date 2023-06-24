@@ -1,6 +1,6 @@
 const submitBtn = document.querySelector('#submit-btn');
 const resetBtn = document.querySelector('#reset-btn');
-const inputField = document.querySelector('#new-tab-input');
+const shortcutsList = document.querySelector('.shortcut');
 const toggleDarkModeBtn = document.querySelector('#toggle-dark-mode');
 
 window.addEventListener('load', () => {
@@ -11,6 +11,7 @@ window.addEventListener('load', () => {
         document.body.classList = 'light-mode';
         localStorage.setItem('darkOrLight', 'light');
     }
+    
 });
 
 toggleDarkModeBtn.addEventListener('click', () => {
@@ -24,12 +25,14 @@ toggleDarkModeBtn.addEventListener('click', () => {
     }
 });
 
-submitBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    localStorage.setItem('start_page_url', inputField.value);
-});
+const addDelBtnAndList = () => {
+    const li = document.createElement('li');
+    li.setAttribute('class', 'lists');
+    shortcutsList.appendChild(li);
+    const btn = document.createElement('button');
+    btn.addEventListener('click', (event) => {
+        event.preventDefault();
 
-resetBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    localStorage.setItem('start_page_url', 'https://chromenewpagefordeveloper.netlify.app/');
-});
+        location.reload();
+    });
+}

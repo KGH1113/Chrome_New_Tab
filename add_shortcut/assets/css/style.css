@@ -49,11 +49,11 @@ body.dark-mode .input-box input[type="text"] {
     color: #fff;
 }
 
-p {
+p, li {
     color: #222;
 }
 
-body.dark-mode p {
+body.dark-mode p, body.dark-mode li {
     color: #fff;
 }
 
